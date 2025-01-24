@@ -21,6 +21,9 @@ body {
 }
 h1{
   font-family: "Syncopate", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-style: normal;
   font-weight: bold;
   font-size: 104px;
@@ -28,6 +31,14 @@ h1{
   top: -200px;
   position: relative;
   z-index: 15;
+  padding: 20px;
+}
+
+.Title p {
+  font-family: "Syncopate", serif;
+  font-size: 18px;
+  margin: 5px;
+  padding: 0;
 }
 
 h2{
@@ -127,44 +138,58 @@ ul{
   list-style: square;
 }
 
+/* Media query for iPhone XS and similar devices */
 @media (max-width: 430px) and (min-width: 375px) {
   h1 {
-    font-size: 60px;
-    top: -150px;
+    font-size: 48px; /* Reduce size for mobile screens */
+    top: -100px; /* Adjust positioning to make space for smaller screens */
   }
 
   h2 {
-    font-size: 50px;
+    font-size: 36px; /* Reduce font size of h2 to fit better */
   }
 
   .api-container {
-    width: 70%;
-    top: 45%;
-    left: 15%;
-    bottom: -50px;
+    width: 85%; /* Increase width to make use of available space */
+    top: 40%; /* Positioning adjusted for better visibility */
+    left: 7%;  /* Center the form */
+    bottom: 0; /* Avoid bottom overflow */
+    padding: 15px; /* Adjust padding for mobile */
   }
 
   input, button {
-    width: 90%;
+    width: 100%; /* Make the input and button stretch across the screen */
+    font-size: 16px; /* Adjust font size for better readability */
   }
 
   .Title {
-    bottom: 100px;
+    bottom: 80px; /* Adjust position so that text fits better */
+  }
+
+  .Title h1 {
+    font-size: 48px; /* Ensure the font is properly sized on mobile */
+    margin: 0; /* Remove any extra margin */
+  }
+
+  .Title p {
+    font-size: 14px; /* Make text smaller to fit mobile screen */
+    text-align: center; /* Center-align paragraphs */
+    padding: 5px; /* Adjust padding for mobile view */
   }
 
   .info {
-    top: 430px;
+    top: 400px; /* Adjust top to ensure it's visible */
   }
 
   ul {
-    flex-direction: column;
-    padding: 15px;
+    flex-direction: column; /* Stack list items vertically */
+    padding: 10px; /* Add padding for spacing */
+    align-items: center; /* Center-align list items */
   }
 
   li {
-    font-size: 16px;
-    padding: 10px;
+    font-size: 16px; /* Adjust font size for list items */
+    padding: 8px; /* Adjust padding for list items */
+    text-align: center; /* Ensure list items are centered */
   }
 }
-
-
