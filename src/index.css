@@ -141,7 +141,7 @@ ul{
 /* Media query for iPhone XS and similar devices */
 @media (max-width: 430px) and (min-width: 375px) {
   h1 {
-    font-size: 40px; /* Reduce size for mobile screens */
+    font-size: 36px; /* Reduce size for mobile screens */
     top: -100px; /* Adjust positioning to make space for smaller screens */
   }
 
@@ -167,13 +167,13 @@ ul{
   }
 
   .Title h1 {
-    font-size: 48px; /* Ensure the font is properly sized on mobile */
+    font-size: 40px; /* Ensure the font is properly sized on mobile */
     margin: 0; /* Remove any extra margin */
   }
 
   .Title p {
     font-size: 14px; /* Make text smaller to fit mobile screen */
-    text-align: center; /* Center-align paragraphs */
+    text-align: left; /* Center-align paragraphs */
     padding: 5px; /* Adjust padding for mobile view */
   }
 
