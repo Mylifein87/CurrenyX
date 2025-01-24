@@ -39,6 +39,7 @@ h1{
   font-size: 18px;
   margin: 5px;
   padding: 0;
+  text-align: left;
 }
 
 h2{
@@ -175,6 +176,7 @@ ul{
     font-size: 14px; /* Make text smaller to fit mobile screen */
     text-align: left; /* Center-align paragraphs */
     padding: 5px; /* Adjust padding for mobile view */
+    
   }
 
   .info {
