@@ -23,14 +23,11 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const access_key = "1fffcd7ab4b69975e90aaad992ee2156";
-
-    fetch(`/api/coinlayer?from=${fromCurrency}&to=${toCurrency}&amount=${amount}`);
-
-
+      setError("");
+      setConversionResult(null);
     
       try{
-        const response = await fetch(url);
+        const response = await fetch( `/api/coinlayer?from=${fromCurrency.toUpperCase()}&to=${toCurrency.toUpperCase()}&amount=${amount}`);
         const data = await response.json();
           
         
@@ -39,8 +36,8 @@ function App() {
         console.log("API Response:", data);
 
         if (data.success) {
-          const fromRate = data.rates[fromCurrency];
-          const toRate = data.rates[toCurrency];
+          const fromRate = data.rates[fromCurrency.toUpperCase];
+          const toRate = data.rates[toCurrency.toUpperCase];
     
 
         if (fromRate && toRate) {
