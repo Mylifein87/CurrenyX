@@ -9,8 +9,8 @@ function App() {
   const [currencyData, setCurrencyData] = useState(null);
   const [error, setError] =useState(null);
 
-  const [fromCurrency, setFromCurrency] = useState('?');  // Default: BTC
-  const [toCurrency, setToCurrency] = useState('?');      // Default: ETH
+  const [fromCurrency, setFromCurrency] = useState('BTC');  // Default: BTC
+  const [toCurrency, setToCurrency] = useState('ETH');      // Default: ETH
   const [amount, setAmount] = useState(1);                  // Default: 1
   const [conversionResult, setConversionResult] = useState(null);
 
@@ -25,6 +25,9 @@ function App() {
 
       setError("");
       setConversionResult(null);
+
+      const cleanFrom = fromCurrency.trim().toUpperCase();
+      const cleanTo = toCurrency.trim().toUpperCase();
     
       try{
         const response = await fetch( `/api/coinlayer?from=${fromCurrency.toUpperCase()}&to=${toCurrency.toUpperCase()}&amount=${amount}`);
@@ -36,8 +39,8 @@ function App() {
         console.log("API Response:", data);
 
         if (data.success) {
-          const fromRate = data.rates[fromCurrency.toUpperCase];
-          const toRate = data.rates[toCurrency.toUpperCase];
+          const fromRate = data.rates[cleanFrom];
+          const toRate = data.rates[cleanTo];
     
 
         if (fromRate && toRate) {
