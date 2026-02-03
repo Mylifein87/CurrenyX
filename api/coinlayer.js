@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   const { from, to, amount } = req.query;
 
-  const url = `http://api.coinlayer.com/api/live?access_key=${process.env.COINLAYER_API_KEY}&symbols=${from},${to}`;
+  const url = `https://api.coinlayer.com/api/live?access_key=${key}&symbols=${from?.toUpperCase()},${to?.toUpperCase()}`;
 
   try {
     const response = await fetch(url);
