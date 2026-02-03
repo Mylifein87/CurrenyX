@@ -25,8 +25,8 @@ function App() {
 
     const access_key = "1fffcd7ab4b69975e90aaad992ee2156";
 
-    const url = `http://api.coinlayer.com/api/live?access_key=${access_key}&from=${fromCurrency}&to=${toCurrency}&amount=${amount}&target=${toCurrency}&symbols=${fromCurrency},${toCurrency}`;
-    
+    fetch(`/api/coinlayer?from=${fromCurrency}&to=${toCurrency}&amount=${amount}`);
+
 
     
       try{
